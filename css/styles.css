@@ -32,14 +32,13 @@ display: inline-block;}
 a:hover,
 a:focus{
     color: var(--one);
-    transition-duration: var(--transition-duration);
-    transition-timing-function: var(--timing-function);
-}
-button{
-    transition-duration: var(--transition-duration);
-    transition-timing-function: var(--timing-function);
 }
 
+:hover,
+:focus{
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--timing-function);
+}
 body {     
     font-family: roboto,  sans-serif;  
       } 
@@ -109,9 +108,7 @@ body {
         line-height: 1.14;     
         position: relative;
     }
-  /* .navigation-list-li{
-      position: relative;
-  } */
+
     .active::after{
         content: "";     
         position: absolute;    
