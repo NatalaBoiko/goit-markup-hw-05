@@ -586,12 +586,9 @@ fill: var(--two);
     background-color:var(--backdrop-bg-col);
     position: fixed;
     top: 0;   
-     transition: opacity 250ms, visibility 250ms ;
+    transition: opacity 250ms, visibility 250ms;
 }
-.backdrop.is-hidden .modal{
-    transform: scale(0.5);
-    transition: var(--transition-duration);
-}
+
 .modal{
     width: 528px;
     min-height: 581px;
@@ -601,8 +598,12 @@ fill: var(--two);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transform: scale(1);
+    transform: translate(-50%, -50%);    
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--timing-function)
+}
+.backdrop.is-hidden .modal{
+    transform: scale(0.5);
     transition: var(--transition-duration);
 }
 .modal-close{
