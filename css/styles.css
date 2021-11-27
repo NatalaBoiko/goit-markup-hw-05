@@ -606,11 +606,13 @@ fill: var(--two);
     background-color: var(--backdrop-bg-col);
     position: fixed;
     top: 0;
-    
+    transition: opacity 1000ms, vicibility 1000ms;
     
 }
-.backdrop.is-hidden.modal{
-transform: scale(0.25);
+.backdrop.is-hidden .modal{
+    transform: scale(0.25)  rotate(180deg);
+    
+    transition: transform 1000ms;
 }
 .modal{
     width: 528px;
@@ -622,8 +624,9 @@ rgba(0, 0, 0, 0.12);
 position: absolute;
 top: 50%;
 left: 50%;
+transform: scale(0) rotate(0);
 transform: translate(-50%, -50%);
-transform: scale(1);
+transition: transform 1000ms;
 }
 
 .modal-close{
@@ -644,7 +647,6 @@ transform: scale(1);
     align-items: center;
 }
 .is-hidden{
-    visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
