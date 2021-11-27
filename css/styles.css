@@ -606,6 +606,12 @@ fill: var(--two);
     background-color: var(--backdrop-bg-col);
     position: fixed;
     top: 0;
+    transition:1000ms, visibility 1000ms;
+    
+}
+.backdrop.is-hidden.modal{
+    transform: scale(0.25);
+    transform: animate__zoomOutUp;
 }
 .modal{
     width: 528px;
@@ -619,6 +625,7 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
+
 .modal-close{
     width: 30px;
     height: 30px;
@@ -635,4 +642,9 @@ transform: translate(-50%, -50%);
     height: 11px;
     justify-content: center;
     align-items: center;
+}
+.is-hidden{
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
