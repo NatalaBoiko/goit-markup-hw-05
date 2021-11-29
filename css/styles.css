@@ -96,6 +96,7 @@ body {
         font-weight: 500;
         font-size: 14px;
         line-height: 1.14; 
+        transition-property: color;
         transition-duration: var(--transition-duration);
         transition-timing-function: var(--timing-function);
                     }    
@@ -130,6 +131,7 @@ body {
         font-weight: 500;
         font-size: 14px;
         line-height: 1.14;      
+        transition-property: color;
         transition-duration: var(--transition-duration);
         transition-timing-function: var(--timing-function);            
     }    
@@ -138,7 +140,8 @@ body {
         width: 16px;
         height: 12px;
         margin-right: 10px;     
-        fill: var(--light);        
+        fill: var(--light);    
+        transition-property: fill;    
         transition-duration: var(--transition-duration);
         transition-timing-function: var(--timing-function);
            }
@@ -182,13 +185,14 @@ body {
         height: 50px;
         margin-top: 30px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        transition-property:background-color, color;
         transition-duration: var(--transition-duration);
         transition-timing-function: var(--timing-function);
     }
     .hero-button:hover, 
     .hero-button:focus {
         color: #000;
-        background-color: #FFFFFF;
+        background-color: #FFFFFF;  
     }    
     
     /*features-section*/
@@ -329,6 +333,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-property: background-color;
     transition-duration: var(--transition-duration);
     transition-timing-function: var(--timing-function);
 }
@@ -344,6 +349,7 @@ fill: var(--two);
     width: 20px;
     height: 20px;
     fill: var(--light);
+    transition-property: fill;
     transition-duration: var(--transition-duration);
     transition-timing-function: var(--timing-function);
 }
@@ -366,6 +372,7 @@ fill: var(--two);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-property: border-color;
     transition-duration: var(--transition-duration);
     transition-timing-function: var(--timing-function);
  }
@@ -376,6 +383,7 @@ fill: var(--two);
 width: 106px;
 height: 60px;
 fill: #AFB1B8;
+transition-property: fill;
 transition-duration: var(--transition-duration);
 transition-timing-function: var(--timing-function);
  }
@@ -421,6 +429,7 @@ transition-timing-function: var(--timing-function);
     border-radius: 4px; 
     border: 0px;      
     padding: 6px 22px;
+    transition-property:background-color, color ;    
     transition-duration: var(--transition-duration);
     transition-timing-function: var(--timing-function);
 }
@@ -428,7 +437,7 @@ transition-timing-function: var(--timing-function);
 .button:focus{
         color: var(--two);
         background-color:var(--one); 
-        box-shadow:0px 2px 2px rgba(0, 0, 0, 0.12);       
+        box-shadow:0px 2px  rgba(0, 0, 0, 0.12),  0px 1px rgba(0, 0, 0, 0.08),  0px 3px  rgba(0, 0, 0, 0.1);       
     }
    
 .portfolio-list {  
@@ -442,15 +451,20 @@ margin-left: -30px;
  margin-top: 30px;   
  margin-left: 30px;
 }
-.portfolio-list>li:hover,
-.portfolio-list>li :focus{
-    box-shadow: 1px 4px  6px  rgba(0, 0, 0, 0.16);
+.portfolio-list-thumb:hover,
+.portfolio-list-thumb :focus{
+    box-shadow: 1px 4px  6px  rgba(0, 0, 0, 0.16),
+     0px 4px  rgba(0, 0, 0, 0.06), 0px 1px   rgba(0, 0, 0, 0.12);
+     /* transition-property: box-shadow;
+     transition-duration: var(--transition-duration);
+     transition-timing-function: var(--timing-function); */
 }
 
 
 .portfolio-item-wrap{
     position: relative;
     overflow: hidden;
+    transition-property: transform;
  transition-duration: var(--transition-duration);
  transition-timing-function: var(--timing-function);
 }
@@ -606,13 +620,13 @@ fill: var(--two);
     background-color: var(--backdrop-bg-col);
     position: fixed;
     top: 0;
-    transition: opacity 1000ms, vicibility 1000ms;
+    transition: opacity 1000ms, timing-function var(--timing-function), vicibility 1000ms;
     
 }
 .backdrop.is-hidden .modal{
     transform: scale(0.25)  rotate(180deg);
-    
-    transition: transform 1000ms;
+    transition-property: transform;
+    transition: transform 1000ms, timing-function var(--timing-function), vicibility 1000ms;
 }
 .modal{
     width: 528px;
@@ -624,7 +638,8 @@ rgba(0, 0, 0, 0.12);
 position: absolute;
 top: 50%;
 left: 50%;
-transform: scale(0) rotate(0);
+transition-property: trancform;
+transform: scale(1) rotate(0);
 transform: translate(-50%, -50%);
 transition: transform 1000ms;
 }
